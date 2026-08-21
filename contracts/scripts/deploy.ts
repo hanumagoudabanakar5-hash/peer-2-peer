@@ -1,20 +1,17 @@
 import { network } from "hardhat";
+import { writeFileSync } from "fs";
 
 const { ethers } = await network.connect();
 
 async function main() {
   const [deployer] = await ethers.getSigners();
-  console.log("Deploying from:", deployer.address);
-
   const Factory = await ethers.getContractFactory("EnergyTrading");
   const contract = await Factory.deploy();
   await contract.waitForDeployment();
-
-  console.log("EnergyTrading deployed to:", contract.target);
-  console.log("Oracle (deployer) is:", deployer.address);
+  const address = contract.target as string;
+  console.log("EnergyTrading deployed to:", address);
+  writeFileSync("../ai/contract_address.txt", address);
+  console.log("Address written to ai/contract_address.txt");
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exitCode = 1;
-});
+main().catch((e) => { console.error(e); process.exitCode = 1; });
