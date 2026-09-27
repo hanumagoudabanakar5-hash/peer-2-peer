@@ -1,0 +1,201 @@
+{
+  "location": "Bengaluru",
+  "generated_at": "2026-09-27T09:00:00",
+  "sell_hours": 11,
+  "total_surplus_kwh": 18.59,
+  "hours": [
+    {
+      "hour": 0,
+      "temp": 21.3,
+      "cloud_cover": 44,
+      "radiation": 0,
+      "predicted_surplus": -1.36,
+      "role": "BUY"
+    },
+    {
+      "hour": 1,
+      "temp": 22.3,
+      "cloud_cover": 40,
+      "radiation": 0,
+      "predicted_surplus": -0.95,
+      "role": "BUY"
+    },
+    {
+      "hour": 2,
+      "temp": 22.8,
+      "cloud_cover": 10,
+      "radiation": 0,
+      "predicted_surplus": -1.46,
+      "role": "BUY"
+    },
+    {
+      "hour": 3,
+      "temp": 21.5,
+      "cloud_cover": 45,
+      "radiation": 0,
+      "predicted_surplus": -1.22,
+      "role": "BUY"
+    },
+    {
+      "hour": 4,
+      "temp": 22.1,
+      "cloud_cover": 40,
+      "radiation": 0,
+      "predicted_surplus": -0.9,
+      "role": "BUY"
+    },
+    {
+      "hour": 5,
+      "temp": 22.3,
+      "cloud_cover": 35,
+      "radiation": 0,
+      "predicted_surplus": -1.17,
+      "role": "BUY"
+    },
+    {
+      "hour": 6,
+      "temp": 21.3,
+      "cloud_cover": 50,
+      "radiation": 0,
+      "predicted_surplus": -1.11,
+      "role": "BUY"
+    },
+    {
+      "hour": 7,
+      "temp": 22.5,
+      "cloud_cover": 34,
+      "radiation": 7.0,
+      "predicted_surplus": 0.29,
+      "role": "SELL"
+    },
+    {
+      "hour": 8,
+      "temp": 27.3,
+      "cloud_cover": 14,
+      "radiation": 198.0,
+      "predicted_surplus": 1.0,
+      "role": "SELL"
+    },
+    {
+      "hour": 9,
+      "temp": 27.6,
+      "cloud_cover": 12,
+      "radiation": 362.0,
+      "predicted_surplus": 1.92,
+      "role": "SELL"
+    },
+    {
+      "hour": 10,
+      "temp": 27.5,
+      "cloud_cover": 65,
+      "radiation": 487.9,
+      "predicted_surplus": 1.94,
+      "role": "SELL"
+    },
+    {
+      "hour": 11,
+      "temp": 28.8,
+      "cloud_cover": 68,
+      "radiation": 567.0,
+      "predicted_surplus": 2.63,
+      "role": "SELL"
+    },
+    {
+      "hour": 12,
+      "temp": 27.9,
+      "cloud_cover": 68,
+      "radiation": 594.0,
+      "predicted_surplus": 2.83,
+      "role": "SELL"
+    },
+    {
+      "hour": 13,
+      "temp": 27.9,
+      "cloud_cover": 46,
+      "radiation": 567.0,
+      "predicted_surplus": 2.71,
+      "role": "SELL"
+    },
+    {
+      "hour": 14,
+      "temp": 27.7,
+      "cloud_cover": 66,
+      "radiation": 487.9,
+      "predicted_surplus": 2.48,
+      "role": "SELL"
+    },
+    {
+      "hour": 15,
+      "temp": 27.4,
+      "cloud_cover": 41,
+      "radiation": 362.0,
+      "predicted_surplus": 1.37,
+      "role": "SELL"
+    },
+    {
+      "hour": 16,
+      "temp": 28.6,
+      "cloud_cover": 37,
+      "radiation": 198.0,
+      "predicted_surplus": 1.18,
+      "role": "SELL"
+    },
+    {
+      "hour": 17,
+      "temp": 28.0,
+      "cloud_cover": 36,
+      "radiation": 7.0,
+      "predicted_surplus": 0.24,
+      "role": "SELL"
+    },
+    {
+      "hour": 18,
+      "temp": 22.1,
+      "cloud_cover": 32,
+      "radiation": 0,
+      "predicted_surplus": -0.97,
+      "role": "BUY"
+    },
+    {
+      "hour": 19,
+      "temp": 22.8,
+      "cloud_cover": 24,
+      "radiation": 0,
+      "predicted_surplus": -1.26,
+      "role": "BUY"
+    },
+    {
+      "hour": 20,
+      "temp": 21.1,
+      "cloud_cover": 69,
+      "radiation": 0,
+      "predicted_surplus": -1.09,
+      "role": "BUY"
+    },
+    {
+      "hour": 21,
+      "temp": 22.3,
+      "cloud_cover": 48,
+      "radiation": 0,
+      "predicted_surplus": -1.33,
+      "role": "BUY"
+    },
+    {
+      "hour": 22,
+      "temp": 21.7,
+      "cloud_cover": 65,
+      "radiation": 0,
+      "predicted_surplus": -1.4,
+      "role": "BUY"
+    },
+    {
+      "hour": 23,
+      "temp": 22.1,
+      "cloud_cover": 46,
+      "radiation": 0,
+      "predicted_surplus": -1.17,
+      "role": "BUY"
+    }
+  ],
+  "note": "sample data \u2014 run export_forecast.py for live weather"
+}

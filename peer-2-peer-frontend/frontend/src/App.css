@@ -1,0 +1,210 @@
+:root {
+  --bg: #0e1512;
+  --panel: #161f1b;
+  --panel-line: #263029;
+  --text: #ecece3;
+  --text-dim: #9aa89e;
+  --sell: #e8a33d;
+  --buy: #3fa796;
+  --escrow: #8c7ae6;
+  --danger: #d9705a;
+  --radius: 6px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono { font-family: "IBM Plex Mono", monospace; }
+
+.app {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* Wallet bar */
+.walletbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 22px 0 18px;
+  border-bottom: 1px solid var(--panel-line);
+  position: relative;
+}
+.walletbar__brand { display: flex; align-items: baseline; gap: 10px; }
+.walletbar__mark { font-size: 1.3rem; }
+.walletbar__name { font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
+.walletbar__tag { color: var(--text-dim); font-size: 0.88rem; }
+.walletbar__status { display: flex; align-items: center; gap: 10px; }
+.walletbar__account {
+  font-family: "IBM Plex Mono", monospace;
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  padding: 7px 12px;
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+}
+.walletbar__error {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 6px;
+  background: #2a1712;
+  border: 1px solid var(--danger);
+  color: #f3b6a5;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+  max-width: 320px;
+}
+
+/* Buttons */
+.btn {
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: filter 0.12s ease;
+}
+.btn:hover { filter: brightness(1.12); }
+.btn:disabled { opacity: 0.5; cursor: default; filter: none; }
+.btn--primary { background: var(--sell); color: #1a1204; }
+.btn--ghost { background: transparent; border-color: var(--panel-line); color: var(--text); }
+.btn--sm { padding: 5px 11px; font-size: 0.8rem; }
+.btn--sell { background: var(--buy); color: #06201b; }
+.btn--confirm { background: var(--escrow); color: #17102f; }
+
+/* Hero forecast */
+.hero { padding: 28px 0 22px; border-bottom: 1px solid var(--panel-line); }
+.hero__head h1 { font-size: 1.4rem; margin: 0 0 4px; font-weight: 600; letter-spacing: -0.01em; }
+.hero__sub { color: var(--text-dim); margin: 0 0 18px; font-size: 0.92rem; }
+.forecaststrip {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 56px;
+  padding: 0 2px;
+}
+.forecaststrip__col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; position: relative; }
+.forecaststrip__bar { width: 100%; border-radius: 2px 2px 0 0; }
+.forecaststrip__bar--sell { background: var(--sell); }
+.forecaststrip__bar--buy { background: var(--buy); align-self: flex-start; margin-top: auto; }
+.forecaststrip__label { position: absolute; bottom: -18px; font-size: 0.65rem; color: var(--text-dim); }
+.hero__legend { display: flex; gap: 18px; margin-top: 26px; font-size: 0.82rem; color: var(--text-dim); }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+.dot--sell { background: var(--sell); }
+.dot--buy { background: var(--buy); }
+
+/* Grid of panels */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding-top: 22px;
+}
+@media (min-width: 860px) {
+  .grid { grid-template-columns: 0.85fr 1.15fr 1.15fr; align-items: start; }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: var(--radius);
+  padding: 16px 16px 18px;
+}
+.panel__head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.panel__head h2 { font-size: 1rem; font-weight: 600; margin: 0; }
+.panel__count { font-size: 0.78rem; color: var(--text-dim); }
+
+.ledger { list-style: none; margin: 0; padding: 0; }
+.ledger__row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--panel-line);
+  font-size: 0.86rem;
+  flex-wrap: wrap;
+}
+.ledger__row:last-child { border-bottom: none; }
+.ledger__row--closed { opacity: 0.55; }
+.ledger__empty { color: var(--text-dim); font-size: 0.85rem; padding: 10px 0; }
+.ledger__name { font-weight: 500; }
+.ledger__addr { color: var(--text-dim); font-size: 0.78rem; }
+.ledger__id { color: var(--text-dim); min-width: 26px; }
+.ledger__kwh { font-weight: 500; }
+.ledger__price { color: var(--text-dim); margin-left: auto; font-size: 0.78rem; }
+.ledger__flow { flex: 1; }
+
+.pill {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--panel-line);
+}
+.pill--oracle { color: var(--escrow); border-color: var(--escrow); }
+.pill--closed { color: var(--text-dim); }
+.pill--escrow { color: var(--escrow); border-color: var(--escrow); }
+.pill--settled { color: var(--buy); border-color: var(--buy); }
+
+.inline-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--panel-line);
+  flex-wrap: wrap;
+}
+.inline-form input {
+  flex: 1;
+  min-width: 100px;
+  background: var(--bg);
+  border: 1px solid var(--panel-line);
+  border-radius: var(--radius);
+  padding: 8px 10px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.85rem;
+}
+.inline-form input:focus { outline: 1px solid var(--sell); }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid var(--panel-line);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  font-size: 0.86rem;
+  max-width: 320px;
+  border: 1px solid var(--panel-line);
+  background: var(--panel);
+}
+.toast--success { border-color: var(--buy); color: var(--buy); }
+.toast--error { border-color: var(--danger); color: #f3b6a5; }
+.toast--info { color: var(--text); }
+
+:focus-visible { outline: 2px solid var(--sell); outline-offset: 2px; }
